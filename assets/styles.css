@@ -38,6 +38,7 @@ main {
     padding: 6px;
     border-radius: 10px;
     background: #fff;
+    display: flex;
 }
 
 /* Heading */
@@ -139,4 +140,148 @@ main {
     height: 250px;
     opacity: 1;
     background: var(--secondary-color);
+}
+
+/* !========== form =========== */
+.contact-form {
+    padding: 20px 30px 0;
+}
+
+label {
+    display: block;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row .form-group:hover input {
+    border-color: #5522df;
+}
+
+.form-row .form-group:hover label {
+    color: #5522df;
+}
+
+.form-row .form-group label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #9a9bb7ff;
+}
+
+.form-row .form-group .form-input {
+    margin-top: 9px;
+    display: block;
+    width: 222px;
+    padding-bottom: 16px;
+    border: none;
+    border-bottom: 2px solid #dcdce6ff;
+    outline: none;
+    caret-color: var(--primary-color);
+}
+
+.form-row .form-group .form-input::placeholder {
+    color: #ababc2;
+}
+
+.error {
+    font-size: 1.4rem;
+    color: red;
+    visibility: hidden;
+}
+
+/* cách 1 */
+/* .form-group:has(:invalid:not(:placeholder-shown)) .error {
+    visibility: visible;
+} */
+
+/* cách 2 */
+.form-group:has(:invalid).form-group:has(input:not(:placeholder-shown)) .error {
+    visibility: visible;
+}
+
+.main-label {
+    margin-top: 20px;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 21px;
+}
+
+.radio-label {
+    font-size: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 8px;
+    position: relative;
+}
+
+.radio-label + .radio-label {
+    margin-left: 12px;
+}
+
+.radio-label::before {
+    content: "";
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    border: 2px solid #dcdce6;
+    border-radius: 50%;
+}
+
+.radio-label:has(input[type="radio"]:checked)::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.radio-label:has(input[type="radio"]:checked)::after {
+    content: "";
+    height: 6px;
+    width: 10px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 4px;
+    top: 4px;
+}
+
+.form-group.message {
+    padding-bottom: 14px;
+    border-bottom: 2px solid #dcdce6ff;
+}
+
+.message-label {
+    margin-top: 30px;
+}
+
+.message-area {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.message-area::placeholder {
+    color: #ababc2;
+}
+
+.btn {
+    display: block;
+    margin-top: 4px;
+    margin-left: auto;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
 }

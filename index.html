@@ -4,6 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Form 1</title>
+        <!-- Font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="./assets/styles.css" />
     </head>
     <body>
@@ -60,7 +68,142 @@
                     <div class="circle large"></div>
                 </section>
 
-                <!-- Contact form -->
+                <!-- !Contact form -->
+                <div class="contact-form">
+                    <form
+                        action="https://api-gateway.fullstack.edu.vn/action_page.php"
+                        autocomplete="off"
+                    >
+                        <!-- row 1 -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>
+                                    First Name
+                                    <input
+                                        class="form-input"
+                                        type="text"
+                                        name="firstName"
+                                        required
+                                        placeholder="Donald"
+                                    />
+                                </label>
+                                <p class="error">Hãy nhập đúng định dạng</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Last Name
+                                    <input
+                                        class="form-input"
+                                        type="text"
+                                        name="lastName"
+                                        required
+                                        placeholder="John Doe"
+                                    />
+                                </label>
+                                <p class="error">Hãy nhập đúng định dạng</p>
+                            </div>
+                        </div>
+
+                        <!-- row 2 -->
+                        <div class="form-row second">
+                            <div class="form-group">
+                                <label>
+                                    Mail
+                                    <input
+                                        class="form-input"
+                                        type="email"
+                                        name="mail"
+                                        placeholder="example@gmail.com"
+                                        required
+                                    />
+                                </label>
+                                <p class="error">Hãy nhập đúng định dạng</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Phone
+                                    <input
+                                        class="form-input"
+                                        type="tel"
+                                        name="phoneNumber"
+                                        placeholder="Write your phone number"
+                                        required
+                                    />
+                                </label>
+                                <p class="error">Hãy nhập đúng định dạng</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="main-label">
+                                What kind of website do you need?
+                            </label>
+
+                            <label class="radio-label" for="webDesign">
+                                <input
+                                    type="radio"
+                                    id="webDesign"
+                                    name="website"
+                                    value="webDesign"
+                                    hidden
+                                    checked
+                                />
+                                Web Design
+                            </label>
+                            <label class="radio-label" for="webDevelopment">
+                                <input
+                                    type="radio"
+                                    id="webDevelopment"
+                                    name="website"
+                                    value="webDevelopment"
+                                    hidden
+                                />
+                                Web Development
+                            </label>
+                            <label class="radio-label" for="logoDesign">
+                                <input
+                                    type="radio"
+                                    id="logoDesign"
+                                    name="website"
+                                    value="logoDesign"
+                                    hidden
+                                />
+                                Logo Design
+                            </label>
+                            <label class="radio-label" for="other">
+                                <input
+                                    type="radio"
+                                    id="other"
+                                    name="website"
+                                    value="other"
+                                    hidden
+                                />
+                                Other
+                            </label>
+                        </div>
+
+                        <!-- message  -->
+                        <div class="form-group message">
+                            <label class="message-label" for="message">
+                                Message
+                                <textarea
+                                    class="message-area"
+                                    name="message"
+                                    id="message"
+                                    rows="2"
+                                    placeholder="Write your message..."
+                                ></textarea>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" type="submit">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
     </body>
